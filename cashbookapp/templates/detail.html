@@ -14,6 +14,11 @@
         <p>지출내역: {{cashbooks.content}}</p>
         <p>이메일:{{cashbooks.email}}</p>
         <p>url:{{cashbooks.url}}</p>
+        {% if cashbooks.image %}
+            <img src="{{ cashbooks.image.url }}" width="250" height="250" alt ='image'></img>
+        {% endif %}
+        <a href="{% url 'edit' cashbooks.id %}">수정하기</a>
+        <a href="{% url 'delete' cashbooks.id %}">삭제하기</a>
     </div>
     
 </body>
